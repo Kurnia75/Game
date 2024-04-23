@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/7 - Sad Theme.ogg-de22931f47a503ecc18b2949c28ea77f.oggstr"
+
+[deps]
+
+source_file="res://Musik/7 - Sad Theme.ogg"
+dest_files=[ "res://.import/7 - Sad Theme.ogg-de22931f47a503ecc18b2949c28ea77f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

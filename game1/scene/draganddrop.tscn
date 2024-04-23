@@ -1,0 +1,177 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://aset/ruangan.PNG" type="Texture" id=1]
+[ext_resource path="res://script/draganddrop.gd" type="Script" id=2]
+[ext_resource path="res://Musik/15 - Credit Theme.ogg" type="AudioStream" id=3]
+[ext_resource path="res://aset/meja.png" type="Texture" id=4]
+[ext_resource path="res://aset/bg1.png" type="Texture" id=5]
+[ext_resource path="res://asset/Pixel Adventure/Items/Boxes/Box3/Idle.png" type="Texture" id=6]
+[ext_resource path="res://asset/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://asset/WhatsApp Image 2022-02-25 at 14.02.20 (2).jpeg" type="Texture" id=8]
+[ext_resource path="res://asset/WhatsApp Image 2022-02-25 at 14.02.20 (1).jpeg" type="Texture" id=9]
+[ext_resource path="res://asset/Pixel Adventure/Items/Fruits/meja.png" type="Texture" id=10]
+[ext_resource path="res://aset/papan.png" type="Texture" id=11]
+
+[sub_resource type="CircleShape2D" id=51]
+radius = 54.0093
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 36.0555
+
+[sub_resource type="CapsuleShape2D" id=32]
+radius = 35.0
+height = 0.0
+
+[sub_resource type="DynamicFont" id=53]
+
+[sub_resource type="DynamicFont" id=52]
+size = 40
+font_data = ExtResource( 7 )
+
+[node name="draganddrop" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="WhatsAppImage2022-02-25At140220" type="Sprite" parent="."]
+position = Vector2( 304.501, 309.5 )
+scale = Vector2( 1.00833, 1.55357 )
+texture = ExtResource( 1 )
+
+[node name="areakarakter" type="Area2D" parent="."]
+position = Vector2( 316, 581 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areakarakter"]
+visible = false
+position = Vector2( 10, -252 )
+shape = SubResource( 51 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="areakarakter"]
+visible = false
+position = Vector2( 127, -75 )
+shape = SubResource( 51 )
+
+[node name="WhatsAppImage2022-02-25At140221" type="Sprite" parent="."]
+position = Vector2( 312.5, 989.183 )
+scale = Vector2( 0.654412, 1.17121 )
+texture = ExtResource( 5 )
+
+[node name="papan2" type="Area2D" parent="."]
+visible = false
+position = Vector2( 143, 726 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="papan2"]
+position = Vector2( -2, -3 )
+shape = SubResource( 13 )
+
+[node name="papan" type="Sprite" parent="papan2"]
+position = Vector2( -5, -4.00003 )
+scale = Vector2( 0.580473, 0.705783 )
+texture = ExtResource( 11 )
+
+[node name="ksr" type="Area2D" parent="."]
+visible = false
+position = Vector2( 449, 716 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ksr"]
+visible = false
+position = Vector2( -1, -10 )
+shape = SubResource( 32 )
+
+[node name="AnimatedSprite2" type="Sprite" parent="ksr"]
+position = Vector2( 0, 6 )
+scale = Vector2( 0.750951, 1.03825 )
+texture = ExtResource( 10 )
+
+[node name="papan3" type="Area2D" parent="."]
+position = Vector2( 159, 888 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="papan3"]
+position = Vector2( -2, 68 )
+shape = SubResource( 13 )
+
+[node name="papan" type="Sprite" parent="papan3"]
+position = Vector2( -4, 74 )
+scale = Vector2( 0.580473, 0.705783 )
+texture = ExtResource( 11 )
+
+[node name="krs2" type="Area2D" parent="."]
+position = Vector2( 451, 894 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="krs2"]
+position = Vector2( -8, 62 )
+shape = SubResource( 32 )
+
+[node name="AnimatedSprite2" type="Sprite" parent="krs2"]
+position = Vector2( -4.99997, 73.0001 )
+scale = Vector2( 0.802379, 0.955684 )
+texture = ExtResource( 10 )
+
+[node name="Idle" type="Sprite" parent="."]
+position = Vector2( 543.5, 68.0001 )
+scale = Vector2( 4.67857, 4.91666 )
+texture = ExtResource( 6 )
+
+[node name="papantulis" type="Sprite" parent="."]
+visible = false
+position = Vector2( 546, 67 )
+scale = Vector2( 0.216231, 0.283014 )
+texture = ExtResource( 11 )
+
+[node name="km" type="Sprite" parent="."]
+visible = false
+position = Vector2( 545.75, 70.5145 )
+scale = Vector2( 0.368571, 0.412578 )
+texture = ExtResource( 4 )
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="skor" type="RichTextLabel" parent="."]
+margin_left = 11.0
+margin_top = 35.0
+margin_right = 575.0
+margin_bottom = 117.0
+custom_colors/default_color = Color( 0.356863, 0.352941, 0.352941, 1 )
+custom_fonts/bold_font = SubResource( 53 )
+custom_fonts/normal_font = SubResource( 52 )
+text = "SKOR :"
+fit_content_height = true
+
+[node name="ppn" type="TextureProgress" parent="."]
+margin_left = 93.0
+margin_top = 1023.0
+margin_right = 435.0
+margin_bottom = 1061.0
+rect_scale = Vector2( 0.36, 0.560001 )
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 9 )
+nine_patch_stretch = true
+
+[node name="kursimeja" type="TextureProgress" parent="."]
+margin_left = 384.0
+margin_top = 1025.0
+margin_right = 726.0
+margin_bottom = 1063.0
+rect_scale = Vector2( 0.36, 0.560001 )
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 9 )
+nine_patch_stretch = true
+
+[node name="timerkursi" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="area_entered" from="areakarakter" to="." method="_on_areakarakter_area_entered"]
+[connection signal="input_event" from="papan2" to="." method="_on_apel2_input_event"]
+[connection signal="input_event" from="papan2" to="." method="_on_papan2_input_event"]
+[connection signal="input_event" from="ksr" to="." method="_on_banana_input_event"]
+[connection signal="input_event" from="ksr" to="." method="_on_ksr_input_event"]
+[connection signal="input_event" from="papan3" to="." method="_on_apel3_input_event"]
+[connection signal="input_event" from="papan3" to="." method="_on_papan3_input_event"]
+[connection signal="input_event" from="krs2" to="." method="_on_banana2_input_event"]
+[connection signal="input_event" from="krs2" to="." method="_on_krs2_input_event"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timerkursi" to="." method="_on_timerpisang_timeout"]
+[connection signal="timeout" from="timerkursi" to="." method="_on_timerkursi_timeout"]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://skrip/prolog_kurnia.gd" type="Script" id=1]
+[ext_resource path="res://aset/gmr.png" type="Texture" id=2]
+[ext_resource path="res://aset/WhatsApp Image 2022-02-25 at 14.02.56.jpeg" type="Texture" id=3]
+[ext_resource path="res://aset/WhatsApp Image 2022-02-25 at 14.02.20 (1).jpeg" type="Texture" id=4]
+[ext_resource path="res://aset/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://aset/WhatsApp Image 2022-02-25 at 14.02.55 (1).jpeg" type="Texture" id=6]
+[ext_resource path="res://Musik/15 - Credit Theme.ogg" type="AudioStream" id=7]
+[ext_resource path="res://aset/ruangan.PNG" type="Texture" id=8]
+[ext_resource path="res://aset/Idle.png" type="Texture" id=9]
+[ext_resource path="res://aset/shadowMisi.png" type="Texture" id=10]
+[ext_resource path="res://aset/bg.png" type="Texture" id=11]
+[ext_resource path="res://script/karakter.tscn" type="PackedScene" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 38
+font_data = ExtResource( 5 )
+
+[node name="prolog_kurnia" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="ruangan" type="Sprite" parent="."]
+visible = false
+position = Vector2( 304.027, 411.609 )
+scale = Vector2( 0.996577, 2.08873 )
+texture = ExtResource( 8 )
+
+[node name="ft" type="Sprite" parent="."]
+position = Vector2( 300, 603 )
+scale = Vector2( 1.85714, 2.32882 )
+texture = ExtResource( 11 )
+
+[node name="idle" type="Sprite" parent="."]
+visible = false
+position = Vector2( 319, 143 )
+scale = Vector2( -5.3164, 6.49976 )
+texture = ExtResource( 9 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 126, 680 )
+
+[node name="gambar" type="Sprite" parent="."]
+visible = false
+position = Vector2( 314.966, 367.986 )
+scale = Vector2( -1.49419, 1.15353 )
+texture = ExtResource( 2 )
+
+[node name="shadow" type="Sprite" parent="."]
+visible = false
+position = Vector2( 284, 347 )
+texture = ExtResource( 10 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="kotak_dialog" type="Sprite" parent="."]
+position = Vector2( 299, 944 )
+scale = Vector2( 0.421973, 2.91527 )
+texture = ExtResource( 4 )
+
+[node name="teks_dialog" type="RichTextLabel" parent="."]
+margin_left = 37.0
+margin_top = 829.0
+margin_right = 563.0
+margin_bottom = 1093.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "INI TEKS"
+
+[node name="btn_next" type="TouchScreenButton" parent="."]
+position = Vector2( 257, 1053 )
+scale = Vector2( 0.30999, 0.445783 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="pressed" from="btn_next" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
